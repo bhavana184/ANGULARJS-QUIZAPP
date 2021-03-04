@@ -1,0 +1,449 @@
+/* :root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+} */
+html{
+  scroll-behavior: smooth;
+
+}
+body{
+    font-family: "Newsreader", sans-serif;
+    /* font-size: 2rem; */
+    text-shadow: 3px 3px 3px #ababab;
+    background-image: linear-gradient(to right,lightblue , white);
+    /* background-image: url('../images/bg1.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat; */
+}
+/* h2{
+  font-family: "Merienda";
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+  /* padding-top: 10px;
+} */
+
+.login-h1{
+  font-family: "Merienda";
+  text-align: center;
+
+  font-size:4rem;
+}
+.login-div{
+    display: block;
+    background-image: linear-gradient(to right,lightblue ,#22a396/*#20d49e/*#0f8763*//*#32a8a0*/);
+    height:13rem;
+    width:55rem/*28rem*/;
+    border-radius: 10px;
+    /* border: 2px solid red; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+
+}
+.button-div{
+  /* border: 2px solid blue; */
+  position: absolute;
+  left:42%; /*45%;*/
+  top: 60%;
+}
+.button-div input{
+  font-family: "Merienda";
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  background-image: linear-gradient(to right,lightblue ,lightblue);
+  border-radius: 30px;
+  padding: 11px;
+  border-style: none;
+}
+.button-div:hover{
+  cursor: pointer;
+}
+.button-div:focus{
+  border-style: none;
+  outline: none;
+}
+.button-div input:hover{
+  cursor: pointer;
+}
+.button-div input:focus{
+  border-style: none;
+  outline: none;
+}
+.question-div{
+  /* display:none; */
+  background-image: linear-gradient(to right,lightblue, #22a396);
+  /* border: 2px solid red; */
+  height: 22rem;/*18rem;*/
+  width: 40rem;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+}
+.option-left-div{
+  /* border: 2px solid blue; */
+  position: absolute;
+  /* left: 45%;*/
+  top: 40%;
+}
+.option-left-div input{
+  font-family: "Merienda";
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  background-image: linear-gradient(to right,lightblue ,lightblue);
+  border-radius: 50%;
+  height: 4rem;
+  width: 20rem;
+  border-style: none;
+}
+.option-left-div div{
+  font-family: "Merienda";
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  background-image: linear-gradient(to right,lightblue ,lightblue);
+  border-radius: 50%;
+  height: 4rem;
+  width: 20rem;
+  border-style: none;
+  transform: translate(45%, -50%);
+}
+/* .option-left-div:hover{
+  cursor: pointer;
+  /* border-style: none;
+} */
+.option-left-div input:hover{
+  cursor: pointer;
+}
+.option-left-div div:hover{
+  cursor: pointer;
+}
+.option-right-div{
+  /* border: 2px solid blue; */
+  position: absolute;
+  /* left: 45%; */
+  top: 65%;
+}
+.option-right-div input{
+  font-family: "Merienda";
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  background-image: linear-gradient(to right,lightblue ,lightblue);
+  border-radius: 50%;
+  height: 4rem;
+  width: 20rem;
+  border-style: none;
+}
+.option-right-div div{
+  font-family: "Merienda";
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  background-image: linear-gradient(to right,lightblue ,lightblue);
+  border-radius: 50%;
+  height: 4rem;
+  width: 20rem;
+  border-style: none;
+}
+/* .option-right-div:hover{
+  cursor: pointer;
+
+} */
+.option-right-div input:hover{
+  cursor: pointer;
+  /* border-style: none; */
+}
+.option-right-div div:hover{
+  cursor: pointer;
+  /* border-style: none; */
+}
+#option1 #option2 #option3 #option4 : focus{
+  border-style: none;
+    outline: none;
+}
+.ques-div{
+  border: 2px solid black;
+  position: absolute;
+  /* left: 45%;*/
+  top: 10%;
+
+  background-image: linear-gradient(to right,lightblue ,lightblue);
+  border-radius: 35px;
+  height: 4rem;
+  width: 40rem;
+  border-style: none;
+}
+.ques-div h2{
+  font-family: "Merienda";
+  font-weight: bold;
+  text-align: center;
+  font-size: 2rem;
+  color: black;
+  padding-top: 7px;
+}
+
+/*progress-bar starts*/
+/* .container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 350px;
+}
+
+.progress-container::before {
+  content: '';
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+}
+
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  background-color: #fff;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--line-border-empty);
+  transition: 0.4s ease;
+}
+
+.circle.active {
+  border-color: var(--line-border-fill);
+}
+
+.btn {
+  background-color: var(--line-border-fill);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
+} */
+
+/* progress bar ends */
+.progressbar{
+  /* border: 2px solid blue; */
+  height: 4rem;
+  width: 35rem;
+  position: absolute;
+  left: 50%;
+  top: 115%;
+  transform: translate(-50%, -50%);
+  background-image: linear-gradient(to right,lightblue, #22a396);
+  border-radius: 15px;
+}
+#progress{
+  font-family: "Merienda";
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  padding-top:10px;
+}
+.scorediv{
+  /* border: 2px solid blue; */
+  height: 4rem;
+  width:15rem; /*10rem;*/
+  position: absolute;
+  left: 17%;/*25%;*/
+  top: -15%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  background-image: linear-gradient(to right,lightblue, #22a396);
+}
+#score_h1{
+  font-family: "Merienda";
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  padding-top:10px;
+}
+.timerdiv{
+  /* border: 2px solid blue; */
+  height: 4rem;
+  width:15rem; /*10rem;*/
+  position: absolute;
+  left: 83%;
+  top: -15%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  background-image: linear-gradient(to right,lightblue, #22a396);
+}
+#timer_h1{
+  font-family: "Merienda";
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  padding-top:10px;
+}
+
+.gameover-div{
+  /* display:none; */
+  background-image: linear-gradient(to right,lightblue, #22a396);
+  /* border: 2px solid red; */
+  height: 18rem;
+  width: 40rem;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+}
+.result-div{
+  /* display:none; */
+  background-image: linear-gradient(to right,lightblue, #22a396);
+  /* border: 2px solid red; */
+  height: 25rem;/*18rem;*/
+  width: 40rem;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+}
+.congrats{
+  /* display:none; */
+  background-image: linear-gradient(to right,lightblue, #22a396);
+  /* border: 2px solid red; */
+  height: 18rem;/*18rem;*/
+  width: 40rem;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+}
+#result_h1 {
+  font-family: "Merienda";
+  text-align: center;
+  font-size: 3rem;
+  color: black;
+  padding-top:41px;
+}
+#result_h1_leader{
+  font-family: "Merienda";
+  text-align: center;
+  font-size: 2rem;
+  color: black;
+}
+#result_h1_user{
+  font-family: "Merienda";
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  padding-top:10px;
+}
+#gameover_h1{
+ font-family: "Merienda";
+ text-align: center;
+ font-size: 4rem;
+ color: black;
+ padding-top:80px;
+}
+/*show winner*/
+.winner-button-div{
+  /* border: 2px solid blue; */
+  position: absolute;
+  left:38%; /*45%;*/
+  top: 84%;
+}
+.winner-button-div input{
+  font-family: "Merienda";
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  background-image: linear-gradient(to right,lightblue ,lightblue);
+  border-radius: 30px;
+  padding: 11px;
+  border-style: none;
+}
+.winner-button-div:hover{
+  cursor: pointer;
+}
+.winner-button-div:focus{
+  border-style: none;
+  outline: none;
+}
+.winner-button-div input:hover{
+  cursor: pointer;
+}
+.winner-button-div input:focus{
+  border-style: none;
+  outline: none;
+}
+.row{
+  /* border:2px solid green; */
+}
+.row-user{
+  /* border:2px solid red; */
+}
+#opt{
+  font-family: "Merienda";
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.7rem;
+  color: black;
+  padding-top: 10px;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="background-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Merienda:wght@700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  </head>
+  <body  ng-app="myApp" ng-controller="quizctrl" ng-init="showStart=true; showQuiz=false; resultShow=false; gameOver=false;showWinner=false;showCongrats=false">
+  <div class="area" >
+    <ul class="circles">
+      <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+      <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+      <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+    </ul>
+
+  <div ng-if="showStart" id="logindiv" class="login-div" >
+    <h1 id="loginh1" class="login-h1">Welcome to Quiz!!</h1>
+    <div id="buttondiv" class="button-div">
+      <input  id="buttoninput" type="submit" name="submit" value="PROCEED" ng-click="startQuiz()">
+    </div>
+  </div>
+
+  <div ng-if="showQuiz" id="questiondiv" class="question-div" >
+    <div id="quesdiv" class="ques-div">
+    <h2 id="quesh2" ng-init="Ques">{{Ques}}</h2>
+    </div>
+    <div id="optionleftdiv" class="option-left-div"  ng-init="indexing">
+      <div id="option1" ng-repeat="option in Options track by $index" ng-click="checkAnswer(option,indexing)"><h2 id="opt">{{option}}</h2></div>
+
+      <!-- <input  id="option1" type="button" >
+      <input  id="option2" type="submit"   >
+    </div>
+    <div id="optionrightdiv" class="option-right-div">
+      <input  id="option3" type="submit"  >
+      <input  id="option4" type="submit"  > -->
+    </div>
+
+    <!-- progress bar -->
+    <div class="progressbar" >
+      <p id="progress" ng-init="qno" > {{"Question "+ qno + " of 3"}}</p>
+    </div>
+    <!-- progress bar ends-->
+    <div class="scorediv" >
+      <h1 id="score_h1" ng-init="myscore">{{myscore+" / 3"}}</h1>
+    </div>
+
+    <div class="timerdiv">
+      <h1 id="timer_h1" ng-init="timer_sec"> {{timer_sec}}</h1>
+    </div>
+
+  </div>
+
+  <!-- <div class="container">
+    <div class="progress-container">
+      <div class="progress" id="progress"></div>
+      <div class="circle active">1</div>
+      <div class="circle">2</div>
+      <div class="circle">3</div>
+      <div class="circle">4</div>
+    </div>
+
+    <button class="btn" id="prev" onclick="myprev();" disabled>Prev</button>
+    <button class="btn" id="next" onclick="mynext();">Next</button>
+  </div>-->
+
+
+
+  <div class="gameover-div" ng-if="gameOver" >
+    <h1 id="gameover_h1">GAME OVER!!</h1>
+  </div>
+  <div class="result-div" ng-if="resultShow">
+    <h1 id="result_h1_leader">LEADER BOARD!!</h1>
+    <div class="row">
+      <div class="row-user" ng-repeat = "x in results">
+        <h1 id="result_h1_user">{{x.name+"  :  "+x.time+" secs"}}</h1>
+      </div>
+    </div>
+    <!-- <button class="button-div" type="button" name="button" ng-click="showWinner()" ng-if="showWinner">Show Winner</button> -->
+    <div id="winnerbuttondiv" class="winner-button-div">
+      <input  id="buttoninput" type="submit" name="submit" value="Show Winner" ng-click="showWinner()" ng-if="showWinner">
+    </div>
+  </div>
+  <div class="congrats" ng-if="showCongrats"ng-init="winner"><h1 id="result_h1">CONGRATULATIONS!!</h1><br>
+    <h1 id="result_h1">{{winner.name +" : "+winner.time+" secs"}}</h1>
+  </div>
+  </div >
+
+    <script type="text/javascript" src="quiz.js" ></script>
+
+  </body>
+</html>
